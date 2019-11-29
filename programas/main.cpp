@@ -27,19 +27,10 @@ int countOccurences(char *str, string word)
     int d = 0;
     for (int i = 0; i < a.size(); i++) 
   	{
-        // if not match found increase count 
-        if (word != a[i]) 
-            c++;
-     
-        
-          // if match found increase count 
-        if (word == a[i]) 
-            d++;
-           }
-        //cout << "palabras que no son: "<< word << ": " << c << endl;
-        //cout << "palabras que son: "<< word << ": " << d << endl;
-        
-        return c;
+        if (word != a[i]) c++;
+        if (word == a[i]) d++;
+     }
+        return d;
 } 
   
   
@@ -70,7 +61,7 @@ int main()
     string filename = "text.txt";
     string palBusca = PalabraDic(filename);
     
-    cout << palBusca << endl;
+    cout << "Palabra a buscar: " <<palBusca << endl;
     
     FILE *file;
     file=fopen("harry.txt", "r");
@@ -86,23 +77,12 @@ int main()
     
      tamLinea=getline(&line_buf, &line_buf_size, file);
     while (tamLinea >= 0){
-    		printf("%s", line_buf);
+    		//printf("%s", line_buf);
     		tamLinea=getline(&line_buf, &line_buf_size, file);
-    		
-   
-    		
-    		//str=line_buf;
+
     		c=countOccurences(line_buf, word); 
     		cuentafinal= cuentafinal+c;
     }
-    
-    
-    cout << cuentafinal;
-    
-    
-    /*char str[] = "GeeksforGeeks de A portal portal computer science de portal for degeeks sdfgdsg sdgfdgerg reger gre ger de "; 
-    string word = palBusca;
-    cout << countOccurences(str, word); 
-    */
+    cout <<"Veces que aparece la palabra: "<<cuentafinal << endl;
     return 0;
 } 

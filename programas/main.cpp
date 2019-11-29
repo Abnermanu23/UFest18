@@ -68,9 +68,7 @@ int main()
     char *line_buf=NULL;
     size_t line_buf_size=0;
     ssize_t tamLinea;
-    int count_linea=0;
-    int c;
-    int cuentafinal=0;
+    int c, cuentafinal=0;
     
     //char* str[];
     string word =palBusca;
